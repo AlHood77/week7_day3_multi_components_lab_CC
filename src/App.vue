@@ -10,13 +10,15 @@
 import { eventBus } from "./main.js";
 import CountriesList from "./components/CountriesList.vue";
 import CountryDetail from "./components/CountryDetail.vue";
+import CountrySelected from "./components/CountrySelected.vue";
 
 export default {
   name: "app",
   data() {
     return {
       countries: [],
-      selectedCountry: null
+      selectedCountry: null,
+      selected: ''
     };
   },
   mounted() {
@@ -24,14 +26,16 @@ export default {
       .then(result => result.json())
       .then(countries => (this.countries = countries));
 
-    eventBus.$on("coutry-selected", country => {
+    eventBus.$on("country-selected", country => {
       this.selectedCountry = country
     });
   },
 
   components: {
     "countries-list": CountriesList,
-    "country-detail": CountryDetail
+    "country-detail": CountryDetail,
+    "country-selected": CountrySelected
+
   }
 };
 </script>

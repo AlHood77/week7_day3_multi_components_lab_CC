@@ -13,7 +13,7 @@ export default {
       eventBus.$emit('country-selected', this.country)      
     }
     }
-}
+};
 </script>
 
 <style>

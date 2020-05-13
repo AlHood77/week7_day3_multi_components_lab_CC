@@ -1,8 +1,9 @@
 <template lang="html">
 
   <div v-if='country'>
+
       <h3>{{country.name}}</h3>
-      <p>{{country.population}}</p>
+      <p>Population:{{country.population}}</p>
       
   </div>
 </template>
